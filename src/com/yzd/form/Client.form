@@ -16,7 +16,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="19f8" class="javax.swing.JLabel" binding="Label1">
+          <component id="19f8" class="javax.swing.JLabel" binding="label1">
             <constraints border-constraint="North"/>
             <properties>
               <text value="状态"/>
@@ -42,7 +42,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="a2b56" class="javax.swing.JLabel" binding="Label2">
+          <component id="a2b56" class="javax.swing.JLabel" binding="label2">
             <constraints border-constraint="North"/>
             <properties>
               <text value="聊天框"/>

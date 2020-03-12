@@ -13,9 +13,9 @@ import java.net.Socket;
 public class Client {
     private JPanel panel1;
     private JTextArea textArea1;
-    private JLabel Label1;
+    private JLabel label1;
     private JTextArea textArea2;
-    private JLabel Label2;
+    private JLabel label2;
     private JTextField textField1;
     private JButton button1;
     private JButton button2;
@@ -27,7 +27,7 @@ public class Client {
         textField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==e.VK_ENTER){
+                if(e.getKeyCode()== KeyEvent.VK_ENTER){
                     cs.run();
                 }
             }
@@ -43,7 +43,7 @@ public class Client {
         button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(button2.getText().equals("连接")){
+                if("连接".equals(button2.getText())){
                     try {
                         socket=new Socket("localhost",8878);
                         new Thread(new Receive(socket,"服务端",textArea2)).start();
@@ -53,7 +53,7 @@ public class Client {
                         textArea1.setText("连接失败！");
                     }
                     button2.setText("关闭");
-                }else if(button2.getText().equals("关闭")){
+                }else if("关闭".equals(button2.getText())){
                     try {
                         if(socket!=null){
                             socket.close();

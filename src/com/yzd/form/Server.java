@@ -18,16 +18,16 @@ public class Server {
     private JTextField textField1;
     private JButton button1;
     private JButton button2;
-    ServerSend ss=null;
+    ServerSend ss;
 
     public Server() {
         ServerThread st=new ServerThread(textArea1,textArea2);
-        ss=new ServerSend(st,textField1,textArea1,textArea2);
+        ss=new ServerSend(textField1, textArea1, textArea2);
 
         textField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==e.VK_ENTER){
+                if(e.getKeyCode()== KeyEvent.VK_ENTER){
                     ss.run();
                 }
             }
@@ -43,11 +43,11 @@ public class Server {
         button2.addMouseListener(new MouseAdapter()  {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(button2.getText().equals("开启服务器")){
+                if("开启服务器".equals(button2.getText())){
                     ServerThread st=new ServerThread(textArea1,textArea2);
                     st.start();
                     button2.setText("关闭服务器");
-                }else if(button2.getText().equals("关闭服务器")){
+                }else if("关闭服务器".equals(button2.getText())){
                     st.stop();
                     String tmp= textArea1.getText();
                     textArea1.setText(tmp+"服务器已关闭！\n");
